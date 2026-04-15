@@ -1,0 +1,28 @@
+# Включване на PHP показване на грешки за development
+# За production се препоръчва да бъдат изключени
+php_flag display_errors on
+php_value error_reporting E_ALL
+
+# Защита на config файла
+<Files "config.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Защита на database.sql файла
+<Files "database.sql">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Защита на .htaccess файла
+<Files ".htaccess">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Задаване на кодировка UTF-8
+AddDefaultCharset UTF-8
+
+# Задаване на index.php като главна страница
+DirectoryIndex index.php index.html
