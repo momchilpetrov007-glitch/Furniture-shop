@@ -6,9 +6,6 @@ if (!isLoggedIn() || !isAdmin()) {
     redirect('index.php');
 }
 
-if (!isLoggedIn() || !isAdmin()) {
-    redirect('index.php');
-}
 
 $error = '';
 $success = '';
