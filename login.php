@@ -10,13 +10,6 @@ if (isLoggedIn()) {
     }
 }
 
-if (isLoggedIn()) {
-    if (isAdmin()) {
-        redirect('admin_orders.php');
-    } else {
-        redirect('index.php');
-    }
-}
 
 $error = '';
 
