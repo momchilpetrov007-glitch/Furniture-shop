@@ -5,6 +5,10 @@ require_once 'config.php';
 if (isLoggedIn() && isAdmin()) {
     redirect('admin_orders.php');
 }
+
+if (isLoggedIn() && isAdmin()) {
+    redirect('admin_orders.php');
+}
 ?>
 
 <!DOCTYPE html>
