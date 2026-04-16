@@ -8,6 +8,11 @@ if (isset($_GET['category']) && !empty($_GET['category'])) {
     $category_filter = "WHERE category = '$category'";
 }
 
+if (isset($_GET['category']) && !empty($_GET['category'])) {
+    $category = escape($conn, $_GET['category']);
+    $category_filter = "WHERE category = '$category'";
+}
+
 // Вземане на всички мебели
 $query = "SELECT * FROM furniture $category_filter ORDER BY created_at DESC";
 $result = mysqli_query($conn, $query);
