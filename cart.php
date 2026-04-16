@@ -15,6 +15,14 @@ if (isset($_GET['remove'])) {
     redirect('cart.php');
 }
 
+if (isset($_GET['remove'])) {
+    $furniture_id = (int)$_GET['remove'];
+    if (isset($_SESSION['cart'][$furniture_id])) {
+        unset($_SESSION['cart'][$furniture_id]);
+    }
+    redirect('cart.php');
+}
+
 // Обработка на актуализиране на количеството
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_cart'])) {
     foreach ($_POST['quantities'] as $furniture_id => $quantity) {
